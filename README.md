@@ -92,7 +92,3 @@ This project demonstrates how cybersecurity risks are identified, scored, mitiga
 * Web dashboard
 * Risk trend tracking
 * User authentication
-
-## License
-
-This project is available for educational and portfolio purposes.
