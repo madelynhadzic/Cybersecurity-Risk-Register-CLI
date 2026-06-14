@@ -1,0 +1,15 @@
+ID,Asset,Category,Threat,Likelihood,Impact,Control Name,Control Effectiveness,Owner,Status,Notes
+R-001,AWS S3 Production Bucket,Data Protection,Unrestricted S3 bucket policy exposes PII to public internet,5,4,S3 Block Public Access + bucket policy review,0.95,Cloud Security Lead,Open,Identified during quarterly cloud posture review
+R-002,Active Directory Domain,Identity & Access,Privileged accounts lack MFA; lateral movement risk after credential theft,4,5,Azure AD Conditional Access MFA enforcement,0.80,IT Security Manager,Open,Residual elevated due to legacy service accounts
+R-003,Production Database Cluster,Vulnerability Management,Critical unpatched CVE in database engine; active exploit in wild,3,5,Network segmentation + IDS monitoring,0.60,DBA / Platform Engineering,Open,Patch scheduled but blocked by uptime SLA
+R-004,Vendor SaaS Platform (HRIS),Third-Party Risk,HRIS vendor suffers data breach; employee PII exfiltrated,3,4,Vendor SOC 2 Type II + DPA in place,0.85,Procurement / GRC,Open,Sub-processor risk not fully assessed
+R-005,CI/CD Pipeline,Secure Development,Compromised build agent injects malicious code into production release,3,4,Pipeline signing + artifact verification,0.90,DevOps Lead,Open,Supply chain risk — build infra not fully hardened
+R-006,Remote Desktop / VPN,Identity & Access,Phishing attack compromises VPN credentials; attacker pivots to internal,4,3,MFA + endpoint detection on corporate endpoints,0.80,IT Security,Open,
+R-007,Internal Wiki / Confluence,Information Security,Sensitive architecture diagrams and API keys leaked via public share link,2,4,DLP rules + quarterly access reviews,0.70,IT Security,Open,
+R-008,Laptop Fleet (150 endpoints),Endpoint Security,Malware infection spreads via unpatched OS vulnerabilities,3,3,EDR + auto-patching within 7-day SLA,0.75,IT Operations,Open,
+R-009,Email Gateway,Phishing & Social Engineering,Business Email Compromise (BEC) — finance tricked into wire transfer,3,3,DMARC + banner warnings + BEC training,0.65,IT Security / Finance,Open,
+R-010,Backup Infrastructure,Business Continuity,Ransomware encrypts primary and backup systems simultaneously,2,4,Immutable backups (WORM) + offline copy,0.95,IT Operations,Open,
+R-011,Internal DNS Server,Network Security,DNS cache poisoning redirects users to phishing site,2,2,DNSSEC + recursive resolver hardening,0.90,Network Engineering,Open,
+R-012,Physical Office Access,Physical Security,Tailgating into server room by unauthorized personnel,1,3,Badge access logging + mantrap entry,0.85,Facilities,Open,
+R-013,Legacy ERP System,End-of-Life Systems,End-of-life ERP has no vendor patches; exploitation leads to data loss,2,5,,0,IT Director,Open,Migration project in progress — 6-month timeline
+R-014,Developer Workstations,Secure Development,Developer installs unvetted open-source package with malicious code,3,4,,0,AppSec,Open,No SCA tooling on developer workstations yet
