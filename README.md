@@ -1,94 +1,88 @@
-# Cybersecurity Risk Register CLI
+# Risk Register CLI
 
-A Python command-line tool for identifying, scoring, and prioritizing cybersecurity risks using a standard risk management methodology.
+**A simple Python tool that helps organizations identify, score, and prioritize cybersecurity risks.**
 
-## Overview
+---
 
-Organizations face risks such as phishing attacks, ransomware, vendor breaches, and cloud misconfigurations. This tool helps document those risks, calculate risk scores, evaluate controls, and prioritize remediation efforts.
+## What is this?
 
-Built as a portfolio project to demonstrate cybersecurity risk management, GRC, IT audit, and Python development skills.
+Every organization faces cybersecurity risks. A server that could be compromised, a vendor that could leak data, or an employee who clicks a phishing email.
 
-## Features
+This tool helps track those risks, calculate how serious they are, and determine which ones should be addressed first.
 
-* Calculate risk scores using **Likelihood × Impact**
-* Assess residual risk after controls are applied
-* Rank risks by severity
-* Generate risk reports with recommendations
-* Import risks from CSV files
-* Add risks interactively through the CLI
-* View risks on a color-coded heat map
-* Includes 14 built-in cybersecurity risk scenarios
+---
 
-## Risk Scoring
+## How it works
 
-Each risk is scored using:
+Each risk is scored using two factors:
+
+* **Likelihood** – How likely is the risk to occur? (1–5)
+* **Impact** – How severe would the consequences be? (1–5)
+
+The two values are multiplied together to produce a risk score:
 
 ```text
 Risk Score = Likelihood × Impact
 ```
 
-| Score | Description   |
-| ----- | ------------- |
-| 1–5   | Low Risk      |
-| 6–10  | Moderate Risk |
-| 11–15 | High Risk     |
-| 16–25 | Critical Risk |
-
 Higher scores indicate higher-priority risks.
 
-## Built-In Examples
+The tool also allows security controls (such as MFA, backups, or security awareness training) to be applied, reducing the overall risk. The remaining risk is known as **residual risk**.
 
-The tool includes realistic cybersecurity scenarios such as:
+---
 
-* Publicly exposed cloud storage
-* Missing multi-factor authentication (MFA)
-* Vendor data breaches
-* Ransomware attacks
-* Phishing campaigns
-* Unpatched systems
-* Legacy software vulnerabilities
+## Features
 
-## Installation
+* Scores risks using a standard risk assessment methodology
+* Calculates residual risk after controls are applied
+* Displays a color-coded risk heat map
+* Ranks risks from highest to lowest priority
+* Generates reports with findings and recommendations
+* Imports risk data from CSV files
+  
+---
 
 ### Requirements
 
-* Python 3.8+
-* No external dependencies
+* Python 3.8 or higher
+* No additional libraries required
 
-### Run
+## Built-In Examples
 
-```bash
-python risk_register.py
-```
+Some of the included risk scenarios:
 
-## Skills Demonstrated
+* AWS cloud storage exposed to the internet
+* Missing multi-factor authentication (MFA)
+* Vendor data breaches
+* Ransomware attacks
+* Phishing and business email compromise
+* Weak access controls and security misconfigurations
 
-**Cybersecurity**
+---
 
-* Risk Assessment
+## Why I Built This
+
+This project was created to demonstrate practical cybersecurity risk management skills and Python development.
+
+It showcases:
+
+* Risk identification and assessment
+* Risk scoring and prioritization
+* Security control evaluation
+* Report generation and documentation
+* Clean, maintainable Python code
+
+---
+
+### Cybersecurity Skills
+
 * Risk Management
-* Residual Risk Analysis
+* Risk Prioritization
 * Security Controls
-* ISO 31000 Principles
-* Governance, Risk & Compliance (GRC)
 
-**Technical**
+### Technical Skills
 
 * Python
-* Object-Oriented Programming
 * CSV Processing
-* Report Generation
 * Data Visualization
-* CLI Development
-
-## Project Purpose
-
-This project demonstrates how cybersecurity risks are identified, scored, mitigated, and reported in real-world organizations. It was built as a portfolio project for cybersecurity, GRC, risk management, and IT audit roles.
-
-## Future Improvements
-
-* PDF report export
-* Database integration
-* Web dashboard
-* Risk trend tracking
-* User authentication
+* CLI Application Development
